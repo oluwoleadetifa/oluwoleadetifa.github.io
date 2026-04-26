@@ -1,0 +1,359 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Oluwole Adetifa — Systems Security Researcher working on distributed systems, confidential computing, QEaaS, QTPM, and zero-trust orchestration." />
+  <title>Oluwole Adetifa | Systems Security Researcher</title>
+  <style>
+    :root {
+      --bg: #0f172a;
+      --panel: #111827;
+      --panel-soft: #1f2937;
+      --text: #e5e7eb;
+      --muted: #94a3b8;
+      --accent: #38bdf8;
+      --accent-soft: rgba(56, 189, 248, 0.12);
+      --border: rgba(148, 163, 184, 0.22);
+      --max: 1080px;
+    }
+
+    * { box-sizing: border-box; }
+
+    body {
+      margin: 0;
+      font-family: Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      background:
+        radial-gradient(circle at top left, rgba(56, 189, 248, 0.14), transparent 34rem),
+        radial-gradient(circle at top right, rgba(129, 140, 248, 0.12), transparent 30rem),
+        var(--bg);
+      color: var(--text);
+      line-height: 1.6;
+    }
+
+    a {
+      color: var(--accent);
+      text-decoration: none;
+    }
+
+    a:hover { text-decoration: underline; }
+
+    header, main, footer {
+      max-width: var(--max);
+      margin: 0 auto;
+      padding: 0 1.25rem;
+    }
+
+    nav {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 1.2rem 0;
+      color: var(--muted);
+      font-size: 0.95rem;
+    }
+
+    nav .brand {
+      color: var(--text);
+      font-weight: 700;
+      letter-spacing: 0.02em;
+    }
+
+    nav .links {
+      display: flex;
+      gap: 1rem;
+      flex-wrap: wrap;
+    }
+
+    .hero {
+      padding: 5rem 0 3.5rem;
+      display: grid;
+      grid-template-columns: 1.4fr 0.8fr;
+      gap: 2rem;
+      align-items: center;
+    }
+
+    .eyebrow {
+      color: var(--accent);
+      font-weight: 700;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      font-size: 0.82rem;
+      margin-bottom: 1rem;
+    }
+
+    h1 {
+      font-size: clamp(2.4rem, 6vw, 4.6rem);
+      line-height: 1.02;
+      margin: 0 0 1rem;
+      letter-spacing: -0.06em;
+    }
+
+    .hero p {
+      color: var(--muted);
+      font-size: 1.15rem;
+      max-width: 720px;
+      margin: 0 0 1.5rem;
+    }
+
+    .button-row {
+      display: flex;
+      gap: 0.8rem;
+      flex-wrap: wrap;
+      margin-top: 1.6rem;
+    }
+
+    .button {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      padding: 0.75rem 1rem;
+      border-radius: 999px;
+      border: 1px solid var(--border);
+      background: var(--accent-soft);
+      color: var(--text);
+      font-weight: 700;
+    }
+
+    .button.primary {
+      background: var(--accent);
+      color: #082f49;
+      border-color: transparent;
+    }
+
+    .profile-card {
+      border: 1px solid var(--border);
+      background: rgba(17, 24, 39, 0.72);
+      backdrop-filter: blur(12px);
+      border-radius: 1.5rem;
+      padding: 1.4rem;
+      box-shadow: 0 24px 70px rgba(0, 0, 0, 0.28);
+    }
+
+    .profile-card h2 {
+      margin: 0 0 0.75rem;
+      font-size: 1.1rem;
+    }
+
+    .pill-row {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.5rem;
+      margin-top: 1rem;
+    }
+
+    .pill {
+      border: 1px solid var(--border);
+      background: rgba(31, 41, 55, 0.75);
+      color: var(--text);
+      border-radius: 999px;
+      padding: 0.35rem 0.65rem;
+      font-size: 0.86rem;
+    }
+
+    section {
+      padding: 2.6rem 0;
+      border-top: 1px solid var(--border);
+    }
+
+    section h2 {
+      font-size: 1.75rem;
+      margin: 0 0 1.2rem;
+      letter-spacing: -0.03em;
+    }
+
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 1rem;
+    }
+
+    .card {
+      border: 1px solid var(--border);
+      background: rgba(17, 24, 39, 0.72);
+      border-radius: 1.25rem;
+      padding: 1.25rem;
+    }
+
+    .card h3 {
+      margin: 0 0 0.45rem;
+      font-size: 1.08rem;
+    }
+
+    .card p, .card li {
+      color: var(--muted);
+    }
+
+    .card ul {
+      padding-left: 1.1rem;
+      margin: 0.75rem 0 0;
+    }
+
+    .pub {
+      padding: 1.15rem 0;
+      border-top: 1px solid var(--border);
+    }
+
+    .pub:first-of-type { border-top: none; }
+
+    .pub-title {
+      font-weight: 800;
+      color: var(--text);
+      margin-bottom: 0.2rem;
+    }
+
+    .pub-meta {
+      color: var(--muted);
+      font-size: 0.96rem;
+    }
+
+    .footer-links {
+      display: flex;
+      gap: 1rem;
+      flex-wrap: wrap;
+      margin-top: 0.75rem;
+    }
+
+    footer {
+      color: var(--muted);
+      padding-bottom: 2.5rem;
+    }
+
+    @media (max-width: 780px) {
+      .hero { grid-template-columns: 1fr; padding-top: 3rem; }
+      .grid { grid-template-columns: 1fr; }
+      nav { align-items: flex-start; gap: 0.8rem; flex-direction: column; }
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <nav>
+      <div class="brand">Oluwole Adetifa</div>
+      <div class="links">
+        <a href="#research">Research</a>
+        <a href="#publications">Publications</a>
+        <a href="#projects">Projects</a>
+        <a href="#contact">Contact</a>
+      </div>
+    </nav>
+
+    <div class="hero">
+      <div>
+        <div class="eyebrow">Systems Security · Distributed Systems · Confidential Computing</div>
+        <h1>Building trustworthy systems for secure distributed computing.</h1>
+        <p>
+          I am a PhD student in Advanced Computing at Morgan State University. My research focuses on
+          systems security, quantum-backed trust services, zero-trust orchestration, and secure distributed systems.
+        </p>
+        <div class="button-row">
+          <a class="button primary" href="Oluwole_Adetifa_CV.pdf">Download CV</a>
+          <a class="button" href="https://scholar.google.com/citations?user=oDmjOsgAAAAJ&hl=en">Google Scholar</a>
+          <a class="button" href="https://github.com/oluwoleadetifa">GitHub</a>
+          <a class="button" href="https://linkedin.com/in/oluwole-adetifa-278586113">LinkedIn</a>
+        </div>
+      </div>
+      <aside class="profile-card">
+        <h2>Research Interests</h2>
+        <p>
+          I study how distributed systems can make trust explicit, measurable, and schedulable across secure execution environments.
+        </p>
+        <div class="pill-row">
+          <span class="pill">Confidential Computing</span>
+          <span class="pill">Zero Trust</span>
+          <span class="pill">TEEs</span>
+          <span class="pill">QTPM</span>
+          <span class="pill">QEaaS</span>
+          <span class="pill">Applied Cryptography</span>
+        </div>
+      </aside>
+    </div>
+  </header>
+
+  <main>
+    <section id="research">
+      <h2>Research</h2>
+      <div class="grid">
+        <article class="card">
+          <h3>Trust as a Systems Resource</h3>
+          <p>
+            My current research investigates how entropy, keys, and attestation artifacts can be modeled as explicit resources in distributed systems.
+            The goal is to support zero-trust orchestration for TEE-based systems using measurable trust services.
+          </p>
+        </article>
+        <article class="card">
+          <h3>Quantum Entropy-as-a-Service</h3>
+          <p>
+            QEaaS exposes hardware-backed entropy through secure APIs for legacy and resource-constrained devices. The system evaluates throughput,
+            latency, entropy freshness, and trust-service behavior under concurrent workloads.
+          </p>
+        </article>
+        <article class="card">
+          <h3>Quantum Trusted Platform Module</h3>
+          <p>
+            QTPM integrates QRNG-backed entropy with software TPM functionality, supporting stronger cryptographic workflows for IoT and distributed systems.
+          </p>
+        </article>
+        <article class="card">
+          <h3>Teaching</h3>
+          <p>
+            I teach Python programming and computer architecture, including object-oriented programming, pipelines, memory hierarchy, RISC-V, and systems-level debugging.
+          </p>
+        </article>
+      </div>
+    </section>
+
+    <section id="publications">
+      <h2>Publications</h2>
+      <div class="pub">
+        <div class="pub-title">Developing Quantum Trusted Platform Module (QTPM) to Advance IoT Security</div>
+        <div class="pub-meta">Guobin Xu, Oluwole Adetifa, Jianzhou Mao, Eric Sakk, Shuangbao Wang. <em>Future Internet</em>, 17(5), 193, 2025.</div>
+        <div><a href="https://scholar.google.com/citations?user=oDmjOsgAAAAJ&hl=en">Scholar</a> · <a href="https://doi.org/10.3390/fi17050193">Paper link coming soon</a></div>
+      </div>
+      <div class="pub">
+        <div class="pub-title">Representative CPS Application Domains</div>
+        <div class="pub-meta">Guobin Xu, Adamu Hussaini, Oluwole Adetifa, Wei Yu. In <em>Edge Intelligence in Cyber-Physical Systems</em>, Academic Press, pp. 35–67, 2025.</div>
+        <div><a href="https://scholar.google.com/citations?user=oDmjOsgAAAAJ&hl=en">Scholar</a> · <a href="https://doi.org/10.1016/B978-0-44-326572-3.00009-7">Publisher link</a></div>
+      </div>
+      <div class="pub">
+        <div class="pub-title">Comparative Analysis and Applications of Quantum Random Number Generators</div>
+        <div class="pub-meta">Oluwole Emmanuel Adetifa. Master’s Thesis, Morgan State University, 2024.</div>
+        <div><a href="https://scholar.google.com/citations?user=oDmjOsgAAAAJ&hl=en">Scholar</a> · <a href="https://www.proquest.com/openview/0e228ff803da898521302a83a2d3b7d4/1?pq-origsite=gscholar&cbl=18750&diss=y">PDF</a></div>
+      </div>
+    </section>
+
+    <section id="projects">
+      <h2>Selected Projects</h2>
+      <div class="grid">
+        <article class="card">
+          <h3>QEaaS Prototype</h3>
+          <p>Secure entropy service integrating QRNG-backed randomness with API authentication, replay protection, and benchmarking.</p>
+          <p><a href="https://github.com/oluwoleadetifa">GitHub</a></p>
+        </article>
+        <article class="card">
+          <h3>Production Backend API</h3>
+          <p>Backend API with JWT authentication, role-based access control, PostgreSQL persistence, Docker deployment, and benchmarking workflows.</p>
+          <p><a href="https://github.com/oluwoleadetifa">GitHub</a></p>
+        </article>
+      </div>
+    </section>
+
+    <section id="contact">
+      <h2>Contact</h2>
+      <p>
+        I am interested in systems security, confidential computing, distributed systems, and applied cryptography collaborations.
+      </p>
+      <div class="footer-links">
+        <a href="mailto:adetifaoluwole@gmail.com">Email</a>
+        <a href="https://scholar.google.com/citations?user=oDmjOsgAAAAJ&hl=en">Google Scholar</a>
+        <a href="https://github.com/oluwoleadetifa">GitHub</a>
+        <a href="https://linkedin.com/in/oluwole-adetifa-278586113">LinkedIn</a>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <p>© 2026 Oluwole Adetifa. Built with GitHub Pages.</p>
+  </footer>
+</body>
+</html>
